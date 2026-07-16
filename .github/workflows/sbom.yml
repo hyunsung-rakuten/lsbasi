@@ -13,7 +13,7 @@ jobs:
 
       - name: Generate SBOM
         id: sbom
-        uses: RakutenMaritime/maritime-sbom-action/generate@v2.2
+        uses: RakutenMaritime/maritime-sbom-action/generate@v2.3
         with:
           scan-path: .
           output-file: dependencies.json
@@ -22,7 +22,7 @@ jobs:
         run: cat ${{ steps.sbom.outputs.sbom-file }}
 
       - name: Upload SBOM
-        uses: RakutenMaritime/maritime-sbom-action/upload@v2.2
+        uses: RakutenMaritime/maritime-sbom-action/upload@v2.3
         with:
           api-url: https://dev-ur-e27.rakuten-maritime.com/api/pipelines/builds
           sbom-file: ${{ steps.sbom.outputs.sbom-file }}
