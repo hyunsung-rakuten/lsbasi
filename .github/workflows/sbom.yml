@@ -24,5 +24,6 @@ jobs:
       - name: Upload SBOM
         uses: RakutenMaritime/maritime-sbom-action/upload@v2.2
         with:
+          api-url: https://dev-ur-e27.rakuten-maritime.com/api/pipelines/builds
           sbom-file: ${{ steps.sbom.outputs.sbom-file }}
           api-key: ${{ secrets.SBOM_API_KEY }}   # X-Api-Key 헤더로 전송
